@@ -1,0 +1,37 @@
+{
+	"cli": true,
+	"target": "directory",
+	"adapterName": "webfuel-adapter",
+	"title": "webfuel.de",
+	"description": "Zugriff auf das Webfuel.de API",
+	"expert": "yes",
+	"features": [
+		"adapter"
+	],
+	"adminFeatures": [],
+	"type": "misc-data",
+	"startMode": "daemon",
+	"connectionType": "cloud",
+	"dataSource": "poll",
+	"connectionIndicator": "yes",
+	"language": "JavaScript",
+	"adminReact": "no",
+	"tools": [
+		"ESLint",
+		"type checking"
+	],
+	"releaseScript": "yes",
+	"devServer": "no",
+	"indentation": "Tab",
+	"quotes": "double",
+	"es6class": "yes",
+	"authorName": "Marcel Schmidt",
+	"authorGithub": "cosgrove39264",
+	"authorEmail": "derprogger@gmail.com",
+	"gitRemoteProtocol": "SSH",
+	"gitCommit": "yes",
+	"defaultBranch": "main",
+	"license": "MIT License",
+	"dependabot": "yes",
+	"creatorVersion": "2.0.2"
+}
