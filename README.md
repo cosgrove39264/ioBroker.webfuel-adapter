@@ -1,4 +1,4 @@
-![Logo](admin/webfuel-adapter.png)
+![Logo](admin/webfuel.png)
 
 # ioBroker.webfuel-adapter
 
@@ -57,6 +57,7 @@ For later updates, the above procedure is not necessary. Just do the following:
 1. Execute `iobroker upload webfuel-adapter` on the ioBroker host
 
 ## Changelog
+
 ### 0.1.5 (2022-02-15)
 
 * (Marcel Schmidt) initial release

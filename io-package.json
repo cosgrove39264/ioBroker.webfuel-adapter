@@ -1,7 +1,7 @@
 {
   "common": {
-    "name": "webfuel-adapter",
-    "version": "0.1.4",
+    "name": "webfuel",
+    "version": "0.1.6",
     "news": {
       "0.1.4": {
         "en": "move to maennl"
@@ -42,7 +42,7 @@
       "zh-cn": "webfuel.de"
     },
     "desc": {
-      "en": "Zugriff auf das Webfuel.de API",
+      "en": "access to the webfuel.de API",
       "de": "Zugriff auf das Webfuel.de-API",
       "ru": "Использование API Webfuel.de",
       "pt": "Zugriff auf das Webfuel.de API",
@@ -54,21 +54,23 @@
       "zh-cn": "Zugriff auf das Webfuel.de API"
     },
     "authors": [
+      "Marcel Schmidt <msc@maennl.info",
       "Marcel Schmidt <derprogger@gmail.com>"
     ],
     "keywords": [
       "ioBroker",
       "template",
       "Smart Home",
-      "home automation"
+      "home automation",
+      "webfuel"
     ],
     "license": "MIT",
     "platform": "Javascript/Node.js",
     "main": "main.js",
-    "icon": "webfuel-adapter.png",
+    "icon": "webfuel.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/cosgrove39264/ioBroker.webfuel-adapter/main/admin/webfuel-adapter.png",
-    "readme": "https://github.com/cosgrove39264/ioBroker.webfuel-adapter/blob/main/README.md",
+    "extIcon": "https://raw.githubusercontent.com/maennl/ioBroker.webfuel/main/admin/webfuel-adapter.png",
+    "readme": "https://github.com/maennl/ioBroker.webfuel/blob/main/README.md",
     "loglevel": "info",
     "mode": "daemon",
     "type": "misc-data",
