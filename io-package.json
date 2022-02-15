@@ -1,101 +1,101 @@
 {
-	"common": {
-		"name": "webfuel-adapter",
-		"version": "0.0.1",
-		"news": {
-			"0.0.1": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"zh-cn": "首次出版"
-			}
-		},
-		"title": "webfuel.de",
-		"titleLang": {
-			"en": "webfuel.de",
-			"de": "webfuel.de",
-			"ru": "webfuel.de",
-			"pt": "webfuel.de",
-			"nl": "webfuel.de",
-			"fr": "webfuel.de",
-			"it": "webfuel.de",
-			"es": "webfuel.de",
-			"pl": "webfuel.de",
-			"zh-cn": "webfuel.de"
-		},
-		"desc": {
-			"en": "Zugriff auf das Webfuel.de API",
-			"de": "Zugriff auf das Webfuel.de-API",
-			"ru": "Использование API Webfuel.de",
-			"pt": "Zugriff auf das Webfuel.de API",
-			"nl": "Zugriff op de Webfuel.de API",
-			"fr": "Zugriff auf das Webfuel.de API",
-			"it": "Zugriff auf das Webfuel.de API",
-			"es": "Zugriff en la API de Webfuel.de",
-			"pl": "Zugriff auf das Webfuel.de API",
-			"zh-cn": "Zugriff auf das Webfuel.de API"
-		},
-		"authors": [
-			"Marcel Schmidt <derprogger@gmail.com>"
-		],
-		"keywords": [
-			"ioBroker",
-			"template",
-			"Smart Home",
-			"home automation"
-		],
-		"license": "MIT",
-		"platform": "Javascript/Node.js",
-		"main": "main.js",
-		"icon": "webfuel-adapter.png",
-		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/cosgrove39264/ioBroker.webfuel-adapter/main/admin/webfuel-adapter.png",
-		"readme": "https://github.com/cosgrove39264/ioBroker.webfuel-adapter/blob/main/README.md",
-		"loglevel": "info",
-		"mode": "daemon",
-		"type": "misc-data",
-		"compact": true,
-		"connectionType": "cloud",
-		"dataSource": "poll",
-		"materialize": true,
-		"dependencies": [
-			{
-				"js-controller": ">=2.0.0"
-			}
-		]
-	},
-	"native": {
-		"option1": true,
-		"option2": "42"
-	},
-	"objects": [],
-	"instanceObjects": [
-		{
-			"_id": "info",
-			"type": "channel",
-			"common": {
-				"name": "Information"
-			},
-			"native": {}
-		},
-		{
-			"_id": "info.connection",
-			"type": "state",
-			"common": {
-				"role": "indicator.connected",
-				"name": "Device or service connected",
-				"type": "boolean",
-				"read": true,
-				"write": false,
-				"def": false
-			},
-			"native": {}
-		}
-	]
+    "common": {
+        "name": "webfuel-adapter",
+        "version": "0.1.0",
+        "news": {
+            "0.1.0": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "webfuel.de",
+        "titleLang": {
+            "en": "webfuel.de",
+            "de": "webfuel.de",
+            "ru": "webfuel.de",
+            "pt": "webfuel.de",
+            "nl": "webfuel.de",
+            "fr": "webfuel.de",
+            "it": "webfuel.de",
+            "es": "webfuel.de",
+            "pl": "webfuel.de",
+            "zh-cn": "webfuel.de"
+        },
+        "desc": {
+            "en": "Zugriff auf das Webfuel.de API",
+            "de": "Zugriff auf das Webfuel.de-API",
+            "ru": "Использование API Webfuel.de",
+            "pt": "Zugriff auf das Webfuel.de API",
+            "nl": "Zugriff op de Webfuel.de API",
+            "fr": "Zugriff auf das Webfuel.de API",
+            "it": "Zugriff auf das Webfuel.de API",
+            "es": "Zugriff en la API de Webfuel.de",
+            "pl": "Zugriff auf das Webfuel.de API",
+            "zh-cn": "Zugriff auf das Webfuel.de API"
+        },
+        "authors": [
+            "Marcel Schmidt <derprogger@gmail.com>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "webfuel-adapter.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/cosgrove39264/ioBroker.webfuel-adapter/main/admin/webfuel-adapter.png",
+        "readme": "https://github.com/cosgrove39264/ioBroker.webfuel-adapter/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "misc-data",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
+    ]
 }

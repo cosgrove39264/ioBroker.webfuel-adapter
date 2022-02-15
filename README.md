@@ -92,6 +92,9 @@ For later updates, the above procedure is not necessary. Just do the following:
 1. Execute `iobroker upload webfuel-adapter` on the ioBroker host
 
 ## Changelog
+### 0.1.0 (2022-02-15)
+* initial release
+
 <!--
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
