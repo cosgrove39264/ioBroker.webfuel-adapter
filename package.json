@@ -1,6 +1,6 @@
 {
   "name": "iobroker.webfuel-adapter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Zugriff auf das Webfuel.de API",
   "author": {
     "name": "Marcel Schmidt",
