@@ -1,8 +1,11 @@
 {
     "common": {
         "name": "webfuel-adapter",
-        "version": "0.1.0",
+        "version": "0.1.1",
         "news": {
+            "0.1.1": {
+                "en": "just for test"
+            },
             "0.1.0": {
                 "en": "initial release",
                 "de": "Erstveröffentlichung",
