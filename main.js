@@ -182,7 +182,7 @@ class WebfuelAdapter extends utils.Adapter {
 						this.set_number_state("probes." + sonde.id + ".terminal_id", sonde.terminal_id);
 						this.set_number_state("probes." + sonde.id + ".last_booking_id", sonde.last_booking_id);
 						this.set_date_state("probes." + sonde.id + ".last_booking", sonde.last_booking);
-						this.set_date_state("probes." + sonde.id + ".letze_peilung", sonde.last_dipping);
+						this.set_date_state("probes." + sonde.id + ".letzte_peilung", sonde.last_dipping);
 						this.set_date_state("probes." + sonde.id + ".naechste_peilung", sonde.next_dipping);
 						if (sonde.last_booking_id > 0) {
 							this.http_client.get("/api/slm/probe-bookings/" + encodeURIComponent(sonde.last_booking_id),
