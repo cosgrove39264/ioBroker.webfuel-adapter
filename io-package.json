@@ -71,8 +71,10 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
+        "api_url": "https://demo.webfuel-api.de",
+        "app_id": "",
+        "username": "",
+        "password": ""
     },
     "objects": [],
     "instanceObjects": [
