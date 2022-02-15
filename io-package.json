@@ -1,8 +1,11 @@
 {
   "common": {
     "name": "webfuel-adapter",
-    "version": "0.1.3",
+    "version": "0.1.4",
     "news": {
+      "0.1.4": {
+        "en": "move to maennl"
+      },
       "0.1.3": {
         "en": "bugfix"
       },
