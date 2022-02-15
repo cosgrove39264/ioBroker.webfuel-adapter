@@ -1,6 +1,6 @@
 {
   "name": "iobroker.webfuel-adapter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Zugriff auf das Webfuel.de API",
   "author": {
     "name": "Marcel Schmidt",
@@ -42,7 +42,8 @@
     "proxyquire": "^2.1.3",
     "sinon": "^13.0.1",
     "sinon-chai": "^3.7.0",
-    "typescript": "~4.5.5"
+    "typescript": "~4.5.5",
+    "glob-parent": ">=5.1.2"
   },
   "main": "main.js",
   "files": [
