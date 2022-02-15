@@ -43,7 +43,7 @@
     "sinon": "^13.0.1",
     "sinon-chai": "^3.7.0",
     "typescript": "~4.5.5",
-    "glob-parent": ">=5.1.2"
+    "glob-parent": ">=6.0.2"
   },
   "main": "main.js",
   "files": [
