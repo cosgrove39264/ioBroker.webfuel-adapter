@@ -1,18 +1,18 @@
 ![Logo](admin/webfuel.png)
 
-# ioBroker.webfuel-adapter
+# ioBroker.webfuel
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.webfuel-adapter.svg)](https://www.npmjs.com/package/iobroker.webfuel-adapter)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.webfuel-adapter.svg)](https://www.npmjs.com/package/iobroker.webfuel-adapter)
-![Number of Installations](https://iobroker.live/badges/webfuel-adapter-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/webfuel-adapter-stable.svg)
+[![NPM version](https://img.shields.io/npm/v/iobroker.webfuel.svg)](https://www.npmjs.com/package/iobroker.webfuel)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.webfuel.svg)](https://www.npmjs.com/package/iobroker.webfuel)
+![Number of Installations](https://iobroker.live/badges/webfuel-installed.svg)
+![Current version in stable repository](https://iobroker.live/badges/webfuel-stable.svg)
 
-[![NPM](https://nodei.co/npm/iobroker.webfuel-adapter.png?downloads=true)](https://nodei.co/npm/iobroker.webfuel-adapter/)
+[![NPM](https://nodei.co/npm/iobroker.webfuel.png?downloads=true)](https://nodei.co/npm/iobroker.webfuel/)
 
 **
-Tests:** ![Test and Release](https://github.com/maennl/ioBroker.webfuel-adapter/workflows/Test%20and%20Release/badge.svg)
+Tests:** ![Test and Release](https://github.com/maennl/ioBroker.webfuel/workflows/Test%20and%20Release/badge.svg)
 
-## webfuel-adapter adapter for ioBroker
+## webfuel adapter for ioBroker
 
 Zugriff auf das Webfuel.de API
 
@@ -35,26 +35,6 @@ Additional command line options for the release script are explained in the
 To get your adapter released in ioBroker, please refer to the documentation
 of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository)
 .
-
-### Test the adapter manually on a local ioBroker installation
-
-In order to install the adapter locally without publishing, the following steps are recommended:
-
-1. Create a tarball from your dev directory:
-   ```bash
-   npm pack
-   ```
-1. Upload the resulting file to your ioBroker host
-1. Install it locally (The paths are different on Windows):
-   ```bash
-   cd /opt/iobroker
-   npm i /path/to/tarball.tgz
-   ```
-
-For later updates, the above procedure is not necessary. Just do the following:
-
-1. Overwrite the changed files in the adapter directory (`/opt/iobroker/node_modules/iobroker.webfuel-adapter`)
-1. Execute `iobroker upload webfuel-adapter` on the ioBroker host
 
 ## Changelog
 

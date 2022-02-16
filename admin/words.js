@@ -1,18 +1,18 @@
-/*global systemDictionary:true */
 "use strict";
 
+// eslint-disable-next-line no-undef
 systemDictionary = {
-	"webfuel-adapter adapter settings": {
-		"en": "Adapter settings for webfuel-adapter",
-		"de": "Adaptereinstellungen für webfuel-adapter",
-		"ru": "Настройки адаптера для webfuel-adapter",
-		"pt": "Configurações do adaptador para webfuel-adapter",
-		"nl": "Adapterinstellingen voor webfuel-adapter",
-		"fr": "Paramètres d'adaptateur pour webfuel-adapter",
-		"it": "Impostazioni dell'adattatore per webfuel-adapter",
-		"es": "Ajustes del adaptador para webfuel-adapter",
-		"pl": "Ustawienia adaptera dla webfuel-adapter",
-		"zh-cn": "webfuel-adapter的适配器设置"
+	"webfuel adapter settings": {
+		"en": "Adapter settings for webfuel",
+		"de": "Adaptereinstellungen für webfuel",
+		"ru": "Настройки адаптера для webfuel",
+		"pt": "Configurações do adaptador para webfuel",
+		"nl": "Adapterinstellingen voor webfuel",
+		"fr": "Paramètres d'adaptateur pour webfuel",
+		"it": "Impostazioni dell'adattatore per webfuel",
+		"es": "Ajustes del adaptador para webfuel",
+		"pl": "Ustawienia adaptera dla webfuel",
+		"zh-cn": "webfuel的适配器设置"
 	},
 	"option1": {
 		"en": "option1",

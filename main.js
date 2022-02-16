@@ -8,49 +8,96 @@
 // you need to create an adapter
 const utils = require("@iobroker/adapter-core");
 const axios = require("axios");
-const {clearTimeout} = require("timers");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
 
+class ITokenResponse {
+
+	constructor(data) {
+		this.access_token = data.access_token || null;
+		this.refresh_token = data.refresh_token || null;
+		this.expires_in = data.expires_in || 3600;
+	}
+}
+
+class ISonde {
+	constructor(data) {
+		this.id = data.id || null;
+		this.station = data.station || null;
+		this.nummer = data.nummer || null;
+		this.display_text = data.display_text || null;
+		this.date_created = data.date_created || null;
+		this.last_updated = data.last_updated || null;
+		this.settings = data.settings || null;
+		this.terminal_id = data.terminal_id || null;
+		this.tank_id = data.tank_id || null;
+		this.product_id = data.product_id || null;
+		this.last_booking = data.last_booking || null;
+		this.last_booking_id = data.last_booking_id || null;
+		this.enabled = data.enabled || null;
+		this.monitoring_enabled = data.monitoring_enabled || null;
+		this.is_warn = data.is_warn || null;
+		this.probe_type = data.probe_type || null;
+		this.last_dipping = data.last_dipping || null;
+		this.next_dipping = data.next_dipping || null;
+		this.last_error = data.last_error || null;
+		this.offline = data.offline || null;
+		this.online_state_change = data.online_state_change || null;
+	}
+}
+
+class IPeilung {
+	constructor(data) {
+		this.id = data.id || null;
+		this.station_id = data.station_id || null;
+		this.terminal_id = data.terminal_id || null;
+		this.tank_id = data.tank_id || null;
+		this.product_id = data.product_id || null;
+		this.probe = data.probe || null;
+		this.zeitpunkt = data.zeitpunkt || null;
+		this.received = data.received || null;
+		this.temperatur = data.temperatur || null;
+		this.sumpf = data.sumpf || null;
+		this.hoehe = data.hoehe || null;
+		this.menge = data.menge || null;
+		this.max_hoehe = data.max_hoehe || null;
+		this.max_menge = data.max_menge || null;
+		this.menge_15c = data.menge_15c || null;
+		this.dichte = data.dichte || null;
+		this.dichte_15c = data.dichte_15c || null;
+		this.schall = data.schall || null;
+		this.spannung = data.spannung || null;
+		this.fehler_code = data.fehler_code || null;
+		this.requested = data.requested || null;
+		this.significant_changes = data.significant_changes || null;
+	}
+}
 
 class WebfuelAdapter extends utils.Adapter {
 
-	get_timeout(to = 1000) {
-		const instance = this;
-		instance.log.info("aktiviere Timer mit " + to + " ms");
-		return new Promise(function (resolve) {
-			setTimeout(() => {
-				instance.log.info("Timer abgelaufen");
-				resolve;
-			}, to);
-		});
-	}
-
 	async get_token() {
-		// noinspection ExceptionCaughtLocallyJS
 		try {
 			if (this.http_client === null || this.http_client === undefined) {
-				throw  new Error("keine Client-Instanz");
-			}
-			const response = await this.http_client.post("/access/login", {
-				username: this.config.username,
-				password: this.config.password
-			});
-			this.log.info("Token-Response: " + JSON.stringify(response.data));
-			this.token = {
-				access_token: response.data.access_token,
-				refresh_token: response.data.refresh_token
-			};
-			this.setState("info.connection", true, true);
-			this.refresh_timer = setTimeout(() => {
-				this.refresh_token().finally(() => {
+				this.token_error("keine Client-Instanz");
+			} else {
+				const response = await this.http_client.post("/access/login", {
+					username: this.config.username,
+					password: this.config.password
 				});
-			}, response.data.expires_in * 800);
+				this.log.info("Token-Response: " + JSON.stringify(response.data));
+				this.token = {
+					access_token: response.data.access_token,
+					refresh_token: response.data.refresh_token
+				};
+				this.setState("info.connection", true, true);
+				this.refresh_timer = setTimeout(() => {
+					this.refresh_token().finally(() => {
+					});
+				}, response.data.expires_in * 800);
+			}
 		} catch (error) {
-			this.log.error("Request-Error " + error.message);
-			this.token = undefined;
-			this.setState("info.connection", false, true);
+			this.token_error("Request-Error " + error.message);
 		}
 	}
 
@@ -58,33 +105,32 @@ class WebfuelAdapter extends utils.Adapter {
 		// noinspection ExceptionCaughtLocallyJS
 		try {
 			if (this.http_client === null || this.http_client === undefined) {
-				throw  new Error("keine Client-Instanz");
+				this.token_error("keine Client-Instanz");
+			} else {
+				this.log.info("Aktualisiere Access-Token");
+				const response = await this.http_client.post("/access/refresh",
+					"grant_type=refresh_token&refresh_token=" + encodeURIComponent(this.token.refresh_token)
+					, {
+						headers: {
+							"Authorization": "Bearer " + this.token.access_token
+						}
+					});
+				this.log.info("Token-Response: " + JSON.stringify(response.data));
+				const tk = new ITokenResponse(response.data);
+				this.token = {
+					access_token: tk.access_token,
+					refresh_token: tk.refresh_token
+				};
+				this.setState("info.connection", true, true);
+				//response.data.expires_in * 800
+				const instance = this;
+				this.refresh_timer = setTimeout(() => {
+					instance.refresh_token().finally(() => {
+					});
+				}, tk.expires_in * 800);
 			}
-			this.log.info("Aktualisiere Access-Token");
-			const response = await this.http_client.post("/access/refresh",
-				"grant_type=refresh_token&refresh_token=" + encodeURIComponent(this.token.refresh_token)
-				, {
-					headers: {
-						"Authorization": "Bearer " + this.token.access_token
-					}
-				});
-			this.log.info("Token-Response: " + JSON.stringify(response.data));
-			this.token = {
-				access_token: response.data.access_token,
-				refresh_token: response.data.refresh_token
-			};
-			this.setState("info.connection", true, true);
-			//response.data.expires_in * 800
-			const instance = this;
-			this.refresh_timer = setTimeout(() => {
-				instance.refresh_token().finally(() => {
-				});
-			}, response.data.expires_in * 800);
 		} catch (error) {
-			this.log.error("Request-Error " + error.message);
-			this.token = undefined;
-			this.setState("info.connection", false, true);
-
+			this.token_error("Request-Error " + error.message);
 		}
 	}
 
@@ -152,93 +198,82 @@ class WebfuelAdapter extends utils.Adapter {
 		});
 	}
 
+	token_error(msg) {
+		this.log.error(msg);
+		this.token = undefined;
+		this.setState("info.connection", false, true);
+	}
+
 	async request_probe_data() {
 		this.probe_interval = null;
 		// noinspection ExceptionCaughtLocallyJS
 		try {
 			if (this.http_client === null || this.http_client === undefined) {
-				throw  new Error("keine Client-Instanz");
-			}
-			this.log.info("hole PROBE-Daten");
-			const pids = this.config.probe_ids.split(",");
-			for (let i = 0; i < pids.length; i++) {
-				const pid = pids[i].trim();
-				if (pid === "") {
-					continue;
-				}
-				this.http_client.get("/api/slm/probes/" + encodeURIComponent(pid),
-					{
-						headers: {
-							"Authorization": "Bearer " + this.token.access_token
-						}
-					}).then((p) => {
-					this.log.debug(JSON.stringify(p.data));
-					const sonde = p.data;
-					if (sonde !== null && sonde !== undefined && sonde.id !== null && sonde.id !== undefined && ("" + sonde.id).trim() === pid) {
-						this.set_number_state("probes." + sonde.id + ".id", sonde.id);
-						this.set_number_state("probes." + sonde.id + ".nummer", sonde.nummer);
-						this.set_text_state("probes." + sonde.id + ".name", sonde.display_text);
-						this.set_number_state("probes." + sonde.id + ".station_id", sonde.station);
-						this.set_number_state("probes." + sonde.id + ".terminal_id", sonde.terminal_id);
-						this.set_number_state("probes." + sonde.id + ".last_booking_id", sonde.last_booking_id);
-						this.set_date_state("probes." + sonde.id + ".last_booking", sonde.last_booking);
-						this.set_date_state("probes." + sonde.id + ".letzte_peilung", sonde.last_dipping);
-						this.set_date_state("probes." + sonde.id + ".naechste_peilung", sonde.next_dipping);
-						if (sonde.last_booking_id > 0) {
-							this.http_client.get("/api/slm/probe-bookings/" + encodeURIComponent(sonde.last_booking_id),
-								{
-									headers: {
-										"Authorization": "Bearer " + this.token.access_token
+				this.token_error("keine Client-Instanz");
+			} else {
+				this.log.info("hole PROBE-Daten");
+				const pids = this.config.probe_ids.split(",");
+				for (let i = 0; i < pids.length; i++) {
+					const pid = pids[i].trim();
+					if (pid === "") {
+						continue;
+					}
+					this.http_client.get("/api/slm/probes/" + encodeURIComponent(pid),
+						{
+							headers: {
+								"Authorization": "Bearer " + this.token.access_token
+							}
+						}).then((p) => {
+						this.log.debug(JSON.stringify(p.data));
+						const sonde = new ISonde(p.data);
+						if (sonde !== null && sonde !== undefined && sonde.id !== null && sonde.id !== undefined && ("" + sonde.id).trim() === pid) {
+							this.set_number_state("probes." + sonde.id + ".id", sonde.id);
+							this.set_number_state("probes." + sonde.id + ".nummer", sonde.nummer);
+							this.set_text_state("probes." + sonde.id + ".name", sonde.display_text);
+							this.set_number_state("probes." + sonde.id + ".station_id", sonde.station);
+							this.set_number_state("probes." + sonde.id + ".terminal_id", sonde.terminal_id);
+							this.set_number_state("probes." + sonde.id + ".last_booking_id", sonde.last_booking_id);
+							this.set_date_state("probes." + sonde.id + ".last_booking", sonde.last_booking);
+							this.set_date_state("probes." + sonde.id + ".letzte_peilung", sonde.last_dipping);
+							this.set_date_state("probes." + sonde.id + ".naechste_peilung", sonde.next_dipping);
+							if (sonde.last_booking_id > 0) {
+								this.http_client.get("/api/slm/probe-bookings/" + encodeURIComponent(sonde.last_booking_id),
+									{
+										headers: {
+											"Authorization": "Bearer " + this.token.access_token
+										}
+									}).then((pl) => {
+									this.log.debug(JSON.stringify(pl.data));
+									const peilung = new IPeilung(pl.data);
+									if (peilung !== null && peilung !== undefined && peilung.id === sonde.last_booking_id) {
+										this.set_number_state("probes." + sonde.id + ".last_booking.id", peilung.id);
+										this.set_date_state("probes." + sonde.id + ".last_booking.zeitpunkt", peilung.zeitpunkt);
+										this.set_number_state("probes." + sonde.id + ".last_booking.temperatur", peilung.temperatur);
+										this.set_number_state("probes." + sonde.id + ".last_booking.sumpf", peilung.sumpf);
+										this.set_number_state("probes." + sonde.id + ".last_booking.hoehe", peilung.hoehe);
+										this.set_number_state("probes." + sonde.id + ".last_booking.menge", peilung.menge);
+										this.set_number_state("probes." + sonde.id + ".last_booking.max_hoehe", peilung.max_hoehe);
+										this.set_number_state("probes." + sonde.id + ".last_booking.max_menge", peilung.max_menge);
+										this.set_number_state("probes." + sonde.id + ".last_booking.menge_15c", peilung.menge_15c);
+										this.set_number_state("probes." + sonde.id + ".last_booking.dichte", peilung.dichte);
+										this.set_number_state("probes." + sonde.id + ".last_booking.dichte_15c", peilung.dichte_15c);
+										this.set_number_state("probes." + sonde.id + ".last_booking.schall", peilung.schall);
+										this.set_number_state("probes." + sonde.id + ".last_booking.spannung", peilung.spannung);
+										this.set_number_state("probes." + sonde.id + ".last_booking.fehler_code", peilung.fehler_code);
+										this.set_boolean_state("probes." + sonde.id + ".last_booking.requested", peilung.requested);
+										this.set_boolean_state("probes." + sonde.id + ".last_booking.significant_changes", peilung.significant_changes);
+									} else {
+										this.deleteState("probes." + sonde.id + ".last_booking.*");
 									}
-								}).then((pl) => {
-								this.log.debug(JSON.stringify(pl.data));
-								const peilung = pl.data;
-								if (peilung !== null && peilung !== undefined && peilung.id === sonde.last_booking_id) {
-									this.set_number_state("probes." + sonde.id + ".last_booking.id", peilung.id);
-									this.set_date_state("probes." + sonde.id + ".last_booking.zeitpunkt", peilung.zeitpunkt);
-									this.set_number_state("probes." + sonde.id + ".last_booking.temperatur", peilung.temperatur);
-									this.set_number_state("probes." + sonde.id + ".last_booking.sumpf", peilung.sumpf);
-									this.set_number_state("probes." + sonde.id + ".last_booking.hoehe", peilung.hoehe);
-									this.set_number_state("probes." + sonde.id + ".last_booking.menge", peilung.menge);
-									this.set_number_state("probes." + sonde.id + ".last_booking.max_hoehe", peilung.max_hoehe);
-									this.set_number_state("probes." + sonde.id + ".last_booking.max_menge", peilung.max_menge);
-									this.set_number_state("probes." + sonde.id + ".last_booking.menge_15c", peilung.menge_15c);
-									this.set_number_state("probes." + sonde.id + ".last_booking.dichte", peilung.dichte);
-									this.set_number_state("probes." + sonde.id + ".last_booking.dichte_15c", peilung.dichte_15c);
-									this.set_number_state("probes." + sonde.id + ".last_booking.schall", peilung.schall);
-									this.set_number_state("probes." + sonde.id + ".last_booking.spannung", peilung.spannung);
-									this.set_number_state("probes." + sonde.id + ".last_booking.fehler_code", peilung.fehler_code);
-									this.set_boolean_state("probes." + sonde.id + ".last_booking.requested", peilung.requested);
-									this.set_boolean_state("probes." + sonde.id + ".last_booking.significant_changes", peilung.significant_changes);
-								} else {
-									this.deleteState("probes." + sonde.id + ".last_booking.*");
-								}
-							});
+								});
+							}
 						}
-					}
-				});
+					});
 
+				}
 			}
-			/*
-			const response = await this.http_client.post("/access/refresh",
-				"grant_type=refresh_token&refresh_token=" + encodeURIComponent(this.token.refresh_token)
-				, {
-					headers: {
-						"Authentication": "Bearer " + this.token.access_token
-					}
-				});
-			this.log.info("Token-Response: " + JSON.stringify(response.data));
-			this.token = {
-				access_token: response.data.access_token,
-				refresh_token: response.data.refresh_token
-			};
-			this.setState("info.connection", true, true);
-			//response.data.expires_in * 800
-			 */
 		} catch (error) {
-			this.log.error("Request-Error " + error.message);
-			this.token = undefined;
-			this.setState("info.connection", false, true);
+			this.token_error("Request-Error " + error.message);
 		}
 
 
@@ -264,7 +299,7 @@ class WebfuelAdapter extends utils.Adapter {
 	constructor(options) {
 		super({
 			...options,
-			name: "webfuel-adapter",
+			name: "webfuel",
 		});
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
@@ -280,68 +315,17 @@ class WebfuelAdapter extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		// Initialize your adapter here
-
-		// Reset the connection indicator during startup
 		this.setState("info.connection", false, true);
 
-		// The adapters config (in the instance object everything under the attribute "native") is accessible via
-		// this.config:
 		this.log.info("config API-URL            : " + this.config.api_url);
 		this.log.info("config APP-ID             : " + this.config.app_id);
 		this.log.info("config USERNAME           : " + this.config.username);
 		this.log.info("config PASSWORD           : " + ("" + this.config.password).length + " Zeichen");
 		this.log.info("config PROBE-IDs          : " + this.config.probe_ids);
 		this.log.info("config PROBE-Abrufinterval: " + this.config.probe_interval);
-		/*
-		For every state in the system there has to be also an object of type state
-		Here a simple template for a boolean variable named "testVariable"
-		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
-		*/
-		//await this.setObjectNotExistsAsync("testVariable", {
-		//	type: "state",
-		//	common: {
-		//		name: "testVariable",
-		//		type: "boolean",
-		//		role: "indicator",
-		//		read: true,
-		//		write: true,
-		//	},
-		//	native: {},
-		//});
-
-		// In order to get state updates, you need to subscribe to them. The following line adds a subscription for our variable we have created above.
-		// this.subscribeStates("testVariable");
-		// You can also add a subscription for multiple states. The following line watches all states starting with "lights."
-		// this.subscribeStates("lights.*");
-		// Or, if you really must, you can also watch all states. Don't do this if you don't need to. Otherwise this will cause a lot of unnecessary load on the system:
-		// this.subscribeStates("*");
 
 		this.subscribeStates("info.connection");
 
-
-		/*
-			setState examples
-			you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
-		*/
-		// the variable testVariable is set to true as command (ack=false)
-		//await this.setStateAsync("testVariable", true);
-
-		// same thing, but the value is flagged "ack"
-		// ack should be always set to true if the value is received from or acknowledged from the target system
-		//await this.setStateAsync("testVariable", { val: true, ack: true });
-
-		// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		//await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
-
-		// examples for the checkPassword/checkGroup functions
-		//let result = await this.checkPasswordAsync("admin", "iobroker");
-		//this.log.info("check user admin pw iobroker: " + result);
-
-		//result = await this.checkGroupAsync("admin", "admin");
-		//this.log.info("check group user admin group admin: " + result);
-
-		//const instance = this;
 		try {
 			// @ts-ignore
 			this.http_client = axios.create({
@@ -351,11 +335,8 @@ class WebfuelAdapter extends utils.Adapter {
 
 			await this.get_token();
 
-			if (this.token !== undefined && this.token !== null && this.token !== "") {
-				this.setState("info.connection", true, true);
-			}
 		} catch (error) {
-			this.log.error("Initialization Error: " + error.message);
+			this.token_error("Initialization Error: " + error.message);
 		}
 	}
 
@@ -426,24 +407,6 @@ class WebfuelAdapter extends utils.Adapter {
 		}
 	}
 
-	// If you need to accept messages in your adapter, uncomment the following block and the corresponding line in the constructor.
-	// /**
-	//  * Some message was sent to this instance over message box. Used by email, pushover, text2speech, ...
-	//  * Using this method requires "common.messagebox" property to be set to true in io-package.json
-	//  * @param {ioBroker.Message} obj
-	//  */
-	// onMessage(obj) {
-	// 	if (typeof obj === "object" && obj.message) {
-	// 		if (obj.command === "send") {
-	// 			// e.g. send email or pushover or whatever
-	// 			this.log.info("send command");
-
-	// 			// Send response in callback if required
-	// 			if (obj.callback) this.sendTo(obj.from, obj.command, "Message received", obj.callback);
-	// 		}
-	// 	}
-	// }
-
 }
 
 if (require.main !== module) {
@@ -453,6 +416,6 @@ if (require.main !== module) {
 	 */
 	module.exports = (options) => new WebfuelAdapter(options);
 } else {
-	// otherwise start the instance directly
+	// otherwise, start the instance directly
 	new WebfuelAdapter();
 }
