@@ -38,7 +38,15 @@ of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#req
 
 ## Changelog
 
-### **WORK IN PROGRESS**
+<!--  
+    Placeholder for the next version (at the beginning of the line):
+    ## **WORK IN PROGRESS**
+-->
+
+## **WORK IN PROGRESS**
+
+- einige Aufräumarbeiten
+- Umbenennung des Adapters gemäß den Vorgaben
 
 ### 0.1.5 (2022-02-15)
 
