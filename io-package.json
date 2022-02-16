@@ -1,8 +1,11 @@
 {
   "common": {
     "name": "webfuel",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "news": {
+      "0.1.7": {
+        "en": "cleanup, bugfixes"
+      },
       "0.1.4": {
         "en": "move to maennl"
       },
@@ -69,7 +72,7 @@
     "main": "main.js",
     "icon": "webfuel.png",
     "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/maennl/ioBroker.webfuel/main/admin/webfuel-adapter.png",
+    "extIcon": "https://raw.githubusercontent.com/maennl/ioBroker.webfuel/main/admin/webfuel.png",
     "readme": "https://github.com/maennl/ioBroker.webfuel/blob/main/README.md",
     "loglevel": "info",
     "mode": "daemon",
@@ -90,7 +93,7 @@
     "username": "",
     "password": "",
     "probe_ids": "",
-    "probe_interval": 120
+    "probe_interval": 3600
   },
   "objects": [],
   "instanceObjects": [
