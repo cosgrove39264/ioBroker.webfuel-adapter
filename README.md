@@ -43,7 +43,7 @@ of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#req
     ## **WORK IN PROGRESS**
 -->
 
-## **WORK IN PROGRESS**
+### **WORK IN PROGRESS**
 
 - einige Aufräumarbeiten
 - Umbenennung des Adapters gemäß den Vorgaben
