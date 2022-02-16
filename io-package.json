@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "webfuel",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "news": {
+      "0.1.9": {
+        "en": "Aufräumarbeiten",
+        "de": "Aufräumarbeiten",
+        "ru": "Aufräumarbeiten",
+        "pt": "Aufräumarbeiten",
+        "nl": "Aufräumarbeiten",
+        "fr": "Aufräumarbeiten",
+        "it": "Aufräumarbeiten",
+        "es": "Aufräumarbeiten",
+        "pl": "Aufräumarbeiten",
+        "zh-cn": "无忧无虑"
+      },
       "0.1.7": {
         "en": "cleanup, bugfixes"
       },
