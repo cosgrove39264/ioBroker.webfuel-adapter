@@ -42,8 +42,7 @@ of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#req
     Placeholder for the next version (at the beginning of the line):
     ## **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.1.8 (2022-02-16)
 
 - einige Aufräumarbeiten
 - Umbenennung des Adapters gemäß den Vorgaben
