@@ -1,0 +1,6 @@
+{
+  "dry": true,
+  "plugins": [
+    "iobroker"
+  ]
+}
