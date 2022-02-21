@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "webfuel",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "news": {
+      "0.1.10": {
+        "en": "Workaround für Request-Error",
+        "de": "Workaround für Request-Fehler",
+        "ru": "Обходной путь для Request-Error",
+        "pt": "Solução alternativa para erro de solicitação",
+        "nl": "Tijdelijke oplossing voor verzoekfout",
+        "fr": "Solution de contournement pour Request-Error",
+        "it": "Soluzione alternativa per richiesta-errore",
+        "es": "Solución alternativa para el error de solicitud",
+        "pl": "Obejście dla błędu żądania",
+        "zh-cn": "请求错误的解决方法"
+      },
       "0.1.9": {
         "en": "Aufräumarbeiten",
         "de": "Aufräumarbeiten",
@@ -29,18 +41,6 @@
       },
       "0.1.1": {
         "en": "just for test"
-      },
-      "0.1.0": {
-        "en": "initial release",
-        "de": "Erstveröffentlichung",
-        "ru": "Начальная версия",
-        "pt": "lançamento inicial",
-        "nl": "Eerste uitgave",
-        "fr": "Première version",
-        "it": "Versione iniziale",
-        "es": "Versión inicial",
-        "pl": "Pierwsze wydanie",
-        "zh-cn": "首次出版"
       }
     },
     "title": "webfuel.de",
