@@ -43,6 +43,10 @@ of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#req
     ### **WORK IN PROGRESS**
 -->
 
+### **WORK IN PROGRESS**
+
+- Workaround für Request-Error
+
 ### 0.1.9 (2022-02-16)
 
 - Aufräumarbeiten

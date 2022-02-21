@@ -91,13 +91,14 @@ class WebfuelAdapter extends utils.Adapter {
 					refresh_token: response.data.refresh_token
 				};
 				this.setState("info.connection", true, true);
+				this.tries = 10;
 				this.refresh_timer = setTimeout(() => {
 					this.refresh_token().finally(() => {
 					});
 				}, response.data.expires_in * 800);
 			}
 		} catch (error) {
-			this.token_error("Request-Error " + error.message);
+			this.token_error("Request-Error, Token nicht zu erzeugen " + error.message);
 		}
 	}
 
@@ -122,6 +123,7 @@ class WebfuelAdapter extends utils.Adapter {
 					refresh_token: tk.refresh_token
 				};
 				this.setState("info.connection", true, true);
+				this.tries = 10;
 				//response.data.expires_in * 800
 				const instance = this;
 				this.refresh_timer = setTimeout(() => {
@@ -130,7 +132,7 @@ class WebfuelAdapter extends utils.Adapter {
 				}, tk.expires_in * 800);
 			}
 		} catch (error) {
-			this.token_error("Request-Error " + error.message);
+			this.token_error("Request-Error, Token nicht zu aktualisieren " + error.message);
 		}
 	}
 
@@ -202,6 +204,15 @@ class WebfuelAdapter extends utils.Adapter {
 		this.log.error(msg);
 		this.token = undefined;
 		this.setState("info.connection", false, true);
+		if (this.tries > 0) {
+			setTimeout(() => {
+				this.tries--;
+				this.get_token().finally(() => {
+				});
+			});
+		} else {
+			this.log.error("Maximale Fehleranzahl erreicht.");
+		}
 	}
 
 	async request_probe_data() {
@@ -243,6 +254,7 @@ class WebfuelAdapter extends utils.Adapter {
 											"Authorization": "Bearer " + this.token.access_token
 										}
 									}).then((pl) => {
+									this.tries = 10;
 									this.log.debug(JSON.stringify(pl.data));
 									const peilung = new IPeilung(pl.data);
 									if (peilung !== null && peilung !== undefined && peilung.id === sonde.last_booking_id) {
@@ -273,7 +285,7 @@ class WebfuelAdapter extends utils.Adapter {
 				}
 			}
 		} catch (error) {
-			this.token_error("Request-Error " + error.message);
+			this.token_error("Request-Error (1) " + error.message);
 		}
 
 
@@ -309,6 +321,7 @@ class WebfuelAdapter extends utils.Adapter {
 		this.probe_interval = undefined;
 		this.refresh_timer = undefined;
 		this.probe_timer_was_started_once = false;
+		this.tries = 10;
 	}
 
 	/**
