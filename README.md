@@ -21,6 +21,8 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+### **WORK IN PROGRESS**
+- npm workflow
 
 ## Changelog
 ### 0.1.13 (2022-03-02)
