@@ -1,5 +1,8 @@
 {
-  "name": "iobroker.webfuel",
+  "name": "@maennl/iobroker.webfuel",
+  "publishConfig": {
+    "access": "public"
+  },
   "version": "0.1.11",
   "description": "Zugriff auf das Webfuel.de API",
   "author": {
@@ -11,6 +14,8 @@
   "keywords": [
     "ioBroker",
     "template",
+    "adapter",
+    "iot",
     "Smart Home",
     "home automation"
   ],
@@ -33,6 +38,7 @@
     "@types/proxyquire": "^1.3.28",
     "@types/sinon": "^10.0.11",
     "@types/sinon-chai": "^3.2.8",
+    "@types/iobroker": "^4.0.1",
     "axios": "^0.26.0",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
