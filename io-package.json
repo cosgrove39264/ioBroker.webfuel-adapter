@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "webfuel",
-    "version": "0.1.13",
+    "version": "0.1.14",
     "news": {
+      "0.1.14": {
+        "en": "npm workflow",
+        "de": "npm-Workflow",
+        "ru": "рабочий процесс нпм",
+        "pt": "fluxo de trabalho npm",
+        "nl": "npm-workflow",
+        "fr": "flux de travail npm",
+        "it": "flusso di lavoro npm",
+        "es": "flujo de trabajo npm",
+        "pl": "przepływ pracy npm",
+        "zh-cn": "npm 工作流程"
+      },
       "0.1.13": {
         "en": "npm workflow",
         "de": "npm-Workflow",
@@ -65,9 +77,6 @@
       },
       "0.1.7": {
         "en": "cleanup, bugfixes"
-      },
-      "0.1.4": {
-        "en": "move to maennl"
       }
     },
     "title": "webfuel.de",
