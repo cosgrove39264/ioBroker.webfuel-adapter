@@ -16,25 +16,8 @@ Tests:** ![Test and Release](https://github.com/maennl/ioBroker.webfuel/workflow
 
 Zugriff auf das Webfuel.de API
 
-### Publishing the adapter
-
-Using GitHub Actions, you can enable automatic releases on npm whenever you push a new git tag that matches the form
-`v<major>.<minor>.<patch>`. We **strongly recommend** that you do. The necessary steps are described
-in `.github/workflows/test-and-release.yml`.
-
-Since you installed the release script, you can create a new
-release simply by calling:
-
-```bash
-npm run release
-```
-
-Additional command line options for the release script are explained in the
-[release-script documentation](https://github.com/AlCalzone/release-script#command-line).
-
-To get your adapter released in ioBroker, please refer to the documentation
-of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#requirements-for-adapter-to-get-added-to-the-latest-repository)
-.
+Dieser Adapter dient zum Zugriff auf das REST-API von webfuel.de.
+In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 
 ## Changelog
 
@@ -42,6 +25,11 @@ of [ioBroker.repositories](https://github.com/ioBroker/ioBroker.repositories#req
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
+
+### **WORK IN PROGRESS**
+
+- Update von Abhängigkeiten
+
 ### 0.1.10 (2022-02-21)
 
 - Workaround für Request-Error
