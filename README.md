@@ -23,6 +23,8 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 -->
 
 ## Changelog
+### **WORK IN PROGRESS**
+- npm workflow
 
 ### 0.1.12 (2022-03-02)
 
