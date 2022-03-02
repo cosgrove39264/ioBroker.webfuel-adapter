@@ -1,3 +1,5 @@
+name: npmjs.org Publishing
+
 on: push
 
 jobs:
