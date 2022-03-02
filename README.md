@@ -2,15 +2,13 @@
 
 # ioBroker.webfuel
 
-[![NPM version](https://img.shields.io/npm/v/iobroker.webfuel.svg)](https://www.npmjs.com/package/iobroker.webfuel)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.webfuel.svg)](https://www.npmjs.com/package/iobroker.webfuel)
-![Number of Installations](https://iobroker.live/badges/webfuel-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/webfuel-stable.svg)
+![NPM](https://img.shields.io/npm/l/@maennl/iobroker.webfuel)
+![node-current](https://img.shields.io/node/v/@maennl/iobroker.webfuel)
+![npm (scoped)](https://img.shields.io/npm/v/@maennl/iobroker.webfuel)
+![npm](https://img.shields.io/npm/dt/@maennl/iobroker.webfuel)
+![GitHub issues](https://img.shields.io/github/issues/maennl/ioBroker.webfuel)
 
-[![NPM](https://nodei.co/npm/iobroker.webfuel.png?downloads=true)](https://nodei.co/npm/iobroker.webfuel/)
-
-**
-Tests:** ![Test and Release](https://github.com/maennl/ioBroker.webfuel/workflows/Test%20and%20Release/badge.svg)
+**Tests:** ![Test and Release](https://github.com/maennl/ioBroker.webfuel/workflows/Test%20and%20Release/badge.svg)
 
 ## webfuel adapter for ioBroker
 
@@ -25,6 +23,7 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 -->
 
 ## Changelog
+
 ### 0.1.12 (2022-03-02)
 
 - (Vorbereitung für) npm-Release
@@ -50,7 +49,7 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 
 MIT License
 
-Copyright (c) 2022 Marcel Schmidt <derprogger@gmail.com>
+Copyright (c) 2022 Marcel Schmidt <msc@maennl.info>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
