@@ -23,8 +23,7 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 -->
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 0.1.13 (2022-03-02)
 
 - npm workflow
 
@@ -43,11 +42,6 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 ### 0.1.9 (2022-02-16)
 
 - Aufräumarbeiten
-
-### 0.1.8 (2022-02-16)
-
-- einige Aufräumarbeiten
-- Umbenennung des Adapters gemäß den Vorgaben
 
 ## License
 

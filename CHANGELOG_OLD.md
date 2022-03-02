@@ -1,4 +1,9 @@
 # Older changes
+## 0.1.8 (2022-02-16)
+
+- einige Aufräumarbeiten
+- Umbenennung des Adapters gemäß den Vorgaben
+
 ## 0.1.5 (2022-02-15)
 
 * (Marcel Schmidt) initial release
