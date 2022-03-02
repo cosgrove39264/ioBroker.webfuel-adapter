@@ -25,8 +25,7 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
     Placeholder for the next version (at the beginning of the line):
     ### **WORK IN PROGRESS**
 -->
-
-### **WORK IN PROGRESS**
+### 0.1.11 (2022-03-02)
 
 - Update von Abhängigkeiten
 
@@ -46,15 +45,6 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 ### 0.1.5 (2022-02-15)
 
 * (Marcel Schmidt) initial release
-
-### 0.1.0 (2022-02-15)
-
-* initial release
-
-<!--
-	Placeholder for the next version (at the beginning of the line):
-	### **WORK IN PROGRESS**
--->
 
 ## License
 

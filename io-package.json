@@ -1,8 +1,20 @@
 {
   "common": {
     "name": "webfuel",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "news": {
+      "0.1.11": {
+        "en": "Update von Abhängigkeiten",
+        "de": "Update von Abhängigkeiten",
+        "ru": "Обновление фон Abhängigkeiten",
+        "pt": "Atualização de Abhängigkeiten",
+        "nl": "Update van Abhängigkeiten",
+        "fr": "Mise à jour des Abhängigkeiten",
+        "it": "Aggiornamento di Abhängigkeiten",
+        "es": "Actualización de Abhängigkeiten",
+        "pl": "Aktualizacja von Abhängigkeiten",
+        "zh-cn": "更新 von Abhängigkeiten"
+      },
       "0.1.10": {
         "en": "Workaround für Request-Error",
         "de": "Workaround für Request-Fehler",
@@ -38,9 +50,6 @@
       },
       "0.1.2": {
         "en": "Security update"
-      },
-      "0.1.1": {
-        "en": "just for test"
       }
     },
     "title": "webfuel.de",
