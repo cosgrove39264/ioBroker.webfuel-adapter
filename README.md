@@ -25,8 +25,7 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 -->
 
 ## Changelog
-
-### **WORK IN PROGRESS**
+### 0.1.12 (2022-03-02)
 
 - (Vorbereitung für) npm-Release
 
@@ -46,10 +45,6 @@ In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 
 - einige Aufräumarbeiten
 - Umbenennung des Adapters gemäß den Vorgaben
-
-### 0.1.5 (2022-02-15)
-
-* (Marcel Schmidt) initial release
 
 ## License
 
