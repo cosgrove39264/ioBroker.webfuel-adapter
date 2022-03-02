@@ -1,4 +1,8 @@
 # Older changes
+## 0.1.10 (2022-02-21)
+
+- Workaround für Request-Error
+
 ## 0.1.9 (2022-02-16)
 
 - Aufräumarbeiten
