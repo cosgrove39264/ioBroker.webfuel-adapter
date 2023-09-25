@@ -6,7 +6,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.1.16",
+  "version": "0.1.17",
   "description": "Zugriff auf das Webfuel.de API",
   "author": {
     "name": "Marcel Schmidt",
