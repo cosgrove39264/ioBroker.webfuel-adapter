@@ -17,14 +17,15 @@ Zugriff auf das Webfuel.de API
 Dieser Adapter dient zum Zugriff auf das REST-API von webfuel.de.
 In der ersten Version steht der Zugriff auf Sondendaten zur Verfügung.
 
-<!--  
-    Placeholder for the next version (at the beginning of the line):
-    ### **WORK IN PROGRESS**
--->
+## Changelog
 
-### **WORK IN PROGRESS**
+### 0.1.18 (2023-09-25)
+* Abhängigkeiten auf aktuellste Versionen aktualisiert
 
-- npm workflow
+
+
+### 0.1.17 (2023-09-25)
+* Kommunikation zum neuen IOBroker Host repariert
 
 ### 0.1.15 (2022-03-02)
 

@@ -1,179 +1,194 @@
 {
-  "common": {
-    "name": "webfuel",
-    "version": "0.1.17",
-    "news": {
-      "0.1.15": {
-        "en": "npm workflow",
-        "de": "npm-Workflow",
-        "ru": "рабочий процесс нпм",
-        "pt": "fluxo de trabalho npm",
-        "nl": "npm-workflow",
-        "fr": "flux de travail npm",
-        "it": "flusso di lavoro npm",
-        "es": "flujo de trabajo npm",
-        "pl": "przepływ pracy npm",
-        "zh-cn": "npm 工作流程"
-      },
-      "0.1.14": {
-        "en": "npm workflow",
-        "de": "npm-Workflow",
-        "ru": "рабочий процесс нпм",
-        "pt": "fluxo de trabalho npm",
-        "nl": "npm-workflow",
-        "fr": "flux de travail npm",
-        "it": "flusso di lavoro npm",
-        "es": "flujo de trabajo npm",
-        "pl": "przepływ pracy npm",
-        "zh-cn": "npm 工作流程"
-      },
-      "0.1.13": {
-        "en": "npm workflow",
-        "de": "npm-Workflow",
-        "ru": "рабочий процесс нпм",
-        "pt": "fluxo de trabalho npm",
-        "nl": "npm-workflow",
-        "fr": "flux de travail npm",
-        "it": "flusso di lavoro npm",
-        "es": "flujo de trabajo npm",
-        "pl": "przepływ pracy npm",
-        "zh-cn": "npm 工作流程"
-      },
-      "0.1.12": {
-        "en": "(Vorbereitung für) npm-Release",
-        "de": "(Vorbereitung für) npm-Release",
-        "ru": "(Vorbereitung für) npm-Release",
-        "pt": "(Vorbereitung für) npm-Release",
-        "nl": "(Vorbereitung für) npm-Release",
-        "fr": "(Vorbereitung für) npm-Release",
-        "it": "(Vorbereitung für) npm-Release",
-        "es": "(Vorbereitung für) npm-Release",
-        "pl": "(Vorbereitung für) npm-Release",
-        "zh-cn": "(Vorbereitung für) npm-Release"
-      },
-      "0.1.11": {
-        "en": "Update von Abhängigkeiten",
-        "de": "Update von Abhängigkeiten",
-        "ru": "Обновление фон Abhängigkeiten",
-        "pt": "Atualização de Abhängigkeiten",
-        "nl": "Update van Abhängigkeiten",
-        "fr": "Mise à jour des Abhängigkeiten",
-        "it": "Aggiornamento di Abhängigkeiten",
-        "es": "Actualización de Abhängigkeiten",
-        "pl": "Aktualizacja von Abhängigkeiten",
-        "zh-cn": "更新 von Abhängigkeiten"
-      },
-      "0.1.10": {
-        "en": "Workaround für Request-Error",
-        "de": "Workaround für Request-Fehler",
-        "ru": "Обходной путь для Request-Error",
-        "pt": "Solução alternativa para erro de solicitação",
-        "nl": "Tijdelijke oplossing voor verzoekfout",
-        "fr": "Solution de contournement pour Request-Error",
-        "it": "Soluzione alternativa per richiesta-errore",
-        "es": "Solución alternativa para el error de solicitud",
-        "pl": "Obejście dla błędu żądania",
-        "zh-cn": "请求错误的解决方法"
-      },
-      "0.1.9": {
-        "en": "Aufräumarbeiten",
-        "de": "Aufräumarbeiten",
-        "ru": "Aufräumarbeiten",
-        "pt": "Aufräumarbeiten",
-        "nl": "Aufräumarbeiten",
-        "fr": "Aufräumarbeiten",
-        "it": "Aufräumarbeiten",
-        "es": "Aufräumarbeiten",
-        "pl": "Aufräumarbeiten",
-        "zh-cn": "无忧无虑"
-      }
+    "common": {
+        "name": "webfuel",
+        "version": "0.1.18",
+        "news": {
+            "0.1.18": {
+                "de": "Abhängigkeiten auf aktuellste Versionen aktualisiert",
+                "en": "Dependencies updated to latest versions",
+                "ru": "Зависимости обновлены до последних версий",
+                "pt": "Dependências atualizadas para as versões mais recentes",
+                "nl": "Afhankelijkheden bijgewerkt naar de nieuwste versies",
+                "fr": "Dépendances mises à jour vers les dernières versions",
+                "it": "Dipendenze aggiornate alle ultime versioni",
+                "es": "Dependencias actualizadas a las últimas versiones.",
+                "pl": "Zależności zaktualizowane do najnowszych wersji"
+            },
+            "0.1.17": {
+                "de": "Kommunikation zum neuen IOBroker Host repariert",
+                "en": "Fixed communication to the new IOBroker host",
+                "ru": "Исправлена ​​связь с новым хостом IOBroker.",
+                "pt": "Comunicação corrigida com o novo host IOBroker",
+                "nl": "Vaste communicatie met de nieuwe IOBroker-host",
+                "fr": "Communication fixe avec le nouvel hôte IOBroker",
+                "it": "Risolta la comunicazione con il nuovo host IOBroker",
+                "es": "Se corrigió la comunicación con el nuevo host IOBroker.",
+                "pl": "Naprawiono komunikację z nowym hostem IOBrokera"
+            },
+            "0.1.15": {
+                "de": "npm-Workflow",
+                "en": "npm workflow",
+                "ru": "рабочий процесс npm",
+                "pt": "fluxo de trabalho npm",
+                "nl": "npm-workflow",
+                "fr": "flux de travail npm",
+                "it": "flusso di lavoro npm",
+                "es": "flujo de trabajo npm",
+                "pl": "przepływ pracy npm"
+            },
+            "0.1.14": {
+                "de": "npm-Workflow",
+                "en": "npm workflow",
+                "ru": "рабочий процесс npm",
+                "pt": "fluxo de trabalho npm",
+                "nl": "npm-workflow",
+                "fr": "flux de travail npm",
+                "it": "flusso di lavoro npm",
+                "es": "flujo de trabajo npm",
+                "pl": "przepływ pracy npm"
+            },
+            "0.1.13": {
+                "de": "npm-Workflow",
+                "en": "npm workflow",
+                "ru": "рабочий процесс npm",
+                "pt": "fluxo de trabalho npm",
+                "nl": "npm-workflow",
+                "fr": "flux de travail npm",
+                "it": "flusso di lavoro npm",
+                "es": "flujo de trabajo npm",
+                "pl": "przepływ pracy npm"
+            },
+            "0.1.12": {
+                "de": "(Vorbereitung für) npm-Release",
+                "en": "(Preparation for) npm release",
+                "ru": "(Подготовка к) выпуску npm",
+                "pt": "(Preparação para) lançamento do npm",
+                "nl": "(Voorbereiding op) npm-release",
+                "fr": "(Préparation pour) la sortie de npm",
+                "it": "(Preparazione per) rilascio npm",
+                "es": "(Preparación para) lanzamiento de npm",
+                "pl": "(Przygotowanie do) wydania npm"
+            },
+            "0.1.11": {
+                "de": "Update von Abhängigkeiten",
+                "en": "Update dependencies",
+                "ru": "Обновить зависимости",
+                "pt": "Atualizar dependências",
+                "nl": "Afhankelijkheden bijwerken",
+                "fr": "Mettre à jour les dépendances",
+                "it": "Aggiorna le dipendenze",
+                "es": "Actualizar dependencias",
+                "pl": "Zaktualizuj zależności"
+            },
+            "0.1.10": {
+                "de": "Workaround für Request-Fehler",
+                "en": "Workaround for request errors",
+                "ru": "Обход ошибок в запросах",
+                "pt": "Solução alternativa para erros de solicitação",
+                "nl": "Tijdelijke oplossing voor aanvraagfouten",
+                "fr": "Solution de contournement pour les erreurs de demande",
+                "it": "Soluzione alternativa per gli errori di richiesta",
+                "es": "Solución alternativa para errores de solicitud",
+                "pl": "Obejście błędów w żądaniach"
+            },
+            "0.1.9": {
+                "de": "Aufräumarbeiten",
+                "en": "Cleanup work",
+                "ru": "Уборочные работы",
+                "pt": "Trabalho de limpeza",
+                "nl": "Opruimwerkzaamheden",
+                "fr": "Travaux de nettoyage",
+                "it": "Lavori di pulizia",
+                "es": "trabajo de limpieza",
+                "pl": "Prace porządkowe"
+            }
+        },
+        "title": "webfuel.de",
+        "titleLang": {
+            "en": "webfuel.de",
+            "de": "webfuel.de",
+            "ru": "webfuel.de",
+            "pt": "webfuel.de",
+            "nl": "webfuel.de",
+            "fr": "webfuel.de",
+            "it": "webfuel.de",
+            "es": "webfuel.de",
+            "pl": "webfuel.de",
+            "zh-cn": "webfuel.de"
+        },
+        "desc": {
+            "en": "access to the webfuel.de API",
+            "de": "Zugriff auf das Webfuel.de-API",
+            "ru": "Использование API Webfuel.de",
+            "pt": "Zugriff auf das Webfuel.de API",
+            "nl": "Zugriff op de Webfuel.de API",
+            "fr": "Zugriff auf das Webfuel.de API",
+            "it": "Zugriff auf das Webfuel.de API",
+            "es": "Zugriff en la API de Webfuel.de",
+            "pl": "Zugriff auf das Webfuel.de API",
+            "zh-cn": "Zugriff auf das Webfuel.de API"
+        },
+        "authors": [
+            "Marcel Schmidt <msc@maennl.info",
+            "Marcel Schmidt <derprogger@gmail.com>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "template",
+            "Smart Home",
+            "home automation",
+            "webfuel"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "webfuel.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/maennl/ioBroker.webfuel/main/admin/webfuel.png",
+        "readme": "https://github.com/maennl/ioBroker.webfuel/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "misc-data",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
     },
-    "title": "webfuel.de",
-    "titleLang": {
-      "en": "webfuel.de",
-      "de": "webfuel.de",
-      "ru": "webfuel.de",
-      "pt": "webfuel.de",
-      "nl": "webfuel.de",
-      "fr": "webfuel.de",
-      "it": "webfuel.de",
-      "es": "webfuel.de",
-      "pl": "webfuel.de",
-      "zh-cn": "webfuel.de"
+    "native": {
+        "api_url": "https://demo.webfuel-api.de",
+        "app_id": "",
+        "username": "",
+        "password": "",
+        "probe_ids": "",
+        "probe_interval": 3600
     },
-    "desc": {
-      "en": "access to the webfuel.de API",
-      "de": "Zugriff auf das Webfuel.de-API",
-      "ru": "Использование API Webfuel.de",
-      "pt": "Zugriff auf das Webfuel.de API",
-      "nl": "Zugriff op de Webfuel.de API",
-      "fr": "Zugriff auf das Webfuel.de API",
-      "it": "Zugriff auf das Webfuel.de API",
-      "es": "Zugriff en la API de Webfuel.de",
-      "pl": "Zugriff auf das Webfuel.de API",
-      "zh-cn": "Zugriff auf das Webfuel.de API"
-    },
-    "authors": [
-      "Marcel Schmidt <msc@maennl.info",
-      "Marcel Schmidt <derprogger@gmail.com>"
-    ],
-    "keywords": [
-      "ioBroker",
-      "template",
-      "Smart Home",
-      "home automation",
-      "webfuel"
-    ],
-    "license": "MIT",
-    "platform": "Javascript/Node.js",
-    "main": "main.js",
-    "icon": "webfuel.png",
-    "enabled": true,
-    "extIcon": "https://raw.githubusercontent.com/maennl/ioBroker.webfuel/main/admin/webfuel.png",
-    "readme": "https://github.com/maennl/ioBroker.webfuel/blob/main/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "misc-data",
-    "compact": true,
-    "connectionType": "cloud",
-    "dataSource": "poll",
-    "materialize": true,
-    "dependencies": [
-      {
-        "js-controller": ">=2.0.0"
-      }
+    "objects": [],
+    "instanceObjects": [
+        {
+            "_id": "info",
+            "type": "channel",
+            "common": {
+                "name": "Information"
+            },
+            "native": {}
+        },
+        {
+            "_id": "info.connection",
+            "type": "state",
+            "common": {
+                "role": "indicator.connected",
+                "name": "Device or service connected",
+                "type": "boolean",
+                "read": true,
+                "write": false,
+                "def": false
+            },
+            "native": {}
+        }
     ]
-  },
-  "native": {
-    "api_url": "https://demo.webfuel-api.de",
-    "app_id": "",
-    "username": "",
-    "password": "",
-    "probe_ids": "",
-    "probe_interval": 3600
-  },
-  "objects": [],
-  "instanceObjects": [
-    {
-      "_id": "info",
-      "type": "channel",
-      "common": {
-        "name": "Information"
-      },
-      "native": {}
-    },
-    {
-      "_id": "info.connection",
-      "type": "state",
-      "common": {
-        "role": "indicator.connected",
-        "name": "Device or service connected",
-        "type": "boolean",
-        "read": true,
-        "write": false,
-        "def": false
-      },
-      "native": {}
-    }
-  ]
 }
