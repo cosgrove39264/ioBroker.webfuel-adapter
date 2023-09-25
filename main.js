@@ -148,7 +148,7 @@ class WebfuelAdapter extends utils.Adapter {
 			},
 			native: {},
 		}).then(() => {
-			this.setState(path, n, {ack: true});
+			this.setState(path, n, true);
 		},(ex) => {
 			this.log.error(ex);
 		});
@@ -166,7 +166,7 @@ class WebfuelAdapter extends utils.Adapter {
 			},
 			native: {},
 		}).then(() => {
-			this.setState(path, n, {ack: true});
+			this.setState(path, n, true);
 		},(ex) => {
 			this.log.error(ex);
 		});
@@ -184,7 +184,7 @@ class WebfuelAdapter extends utils.Adapter {
 			},
 			native: {},
 		}).then(() => {
-			this.setState(path, n, {ack: true});
+			this.setState(path, n,  true);
 		},(ex) => {
 			this.log.error(ex);
 		});
@@ -202,7 +202,7 @@ class WebfuelAdapter extends utils.Adapter {
 			},
 			native: {},
 		}).then(() => {
-			this.setState(path, n, {ack: true});
+			this.setState(path, n, true);
 		},(ex) => {
 			this.log.error(ex);
 		});
